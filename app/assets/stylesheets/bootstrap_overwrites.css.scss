@@ -1,3 +1,98 @@
 .navbar {
 	margin-bottom: 0px !important;
 }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    background-color: #0081C2;
+    background-image: linear-gradient(to bottom, #0088CC, #0077B3);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #0081C2;
+    background-image: linear-gradient(to bottom, #0088CC, #0077B3);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    outline: 0 none;
+    text-decoration: none;
+}
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    color: #999999;
+}
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    cursor: default;
+    text-decoration: none;
+}
+.open {
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.dropdown-backdrop {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 990;
+}
+.pull-right > .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+    border-bottom: 4px solid #000000;
+    border-top: 0 none;
+    content: "";
+}
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+    bottom: 100%;
+    margin-bottom: 1px;
+    top: auto;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    border-radius: 0 6px 6px 6px;
+    left: 100%;
+    margin-left: -1px;
+    margin-top: -6px;
+    top: 0;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+.dropup .dropdown-submenu > .dropdown-menu {
+    border-radius: 5px 5px 5px 0;
+    bottom: 0;
+    margin-bottom: -2px;
+    margin-top: 0;
+    top: auto;
+}
+.dropdown-submenu > a:after {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #CCCCCC;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    content: " ";
+    display: block;
+    float: right;
+    height: 0;
+    margin-right: -10px;
+    margin-top: 5px;
+    width: 0;
+}
+.dropdown-submenu:hover > a:after {
+    border-left-color: #FFFFFF;
+}
+.dropdown-submenu.pull-left {
+    float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+    border-radius: 6px 0 6px 6px;
+    left: -100%;
+    margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+.container.leave_container
+  .row.box_container
+    .col-sm-2
+      = form_for @leave do |f|
+        .control-group
+          = f.label(:date_from, :class => "control-label")
+          .controls
+            = f.datepicker :date_from, :placeholder => "DD/MM/YYYY"
+        .control-group
+          = f.label(:date_to, :class => "control-label")
+          .controls
+            = f.datepicker :date_to, :placeholder => "DD/MM/YYYY"
+        .control-group
+          = f.label(:description, :class => "control-label")
+          .controls
+            = f.text_area :description, :rows => 3, :placeholder => "Please mention leave reason"
+        .control-group
+          .controls
+            = f.submit "Submit", :class => "btn btn-primary save_leave"

@@ -414,7 +414,7 @@ a:hover.icon-6	{
 	padding: 10px 0 10px 10px;
 	}
 #product-table tr.alternate-row	{
-	background: #333;
+	/*background: #333;*/
 	}
 #product-table td.alternate-row {
     background: none repeat scroll 0 0 #ECECEC;
@@ -1871,8 +1871,10 @@ font-size:12px;height:30px;padding:5px;
 
 
 /*Employee Search*/
-
-.alternate-row i {
+.search_styletd, .alternate-row-search, .alternate-row-bday {
+	background: #333;
+}
+.alternate-row-search, .alternate-row-bday i {
 	color: #d3d3d3;
 }
 .search_user_image {
@@ -1883,4 +1885,7 @@ font-size:12px;height:30px;padding:5px;
   color: #C3862D;
   display: block;
   margin: 5px;
+}
+.employee_sarch_exp {
+	color: #C3862D;
 }

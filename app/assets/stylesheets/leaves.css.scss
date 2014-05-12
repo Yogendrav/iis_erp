@@ -1,0 +1,166 @@
+// Place all the styles related to the leaves controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.leave_container {
+	height: 400px;
+  margin-top: 10px;
+  width: 450px;
+  .box_container {
+  	border: 1px solid #D3D3D3;
+    border-radius: 2px 2px 2px 2px;
+    position: relative;
+    top: 150px;
+    .save_leave {
+    	margin: 10px;
+    }
+  }
+}
+#login-div {
+  height: 650px;
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+}
+
+#login-box {
+  .input-group {
+    margin-top: 5px;
+  }
+  h2 {
+    margin-top: 2px;
+  }
+  position: absolute;
+  width: 25%;
+  /*height: 250px;*/
+  top: 50%;
+  margin-top: -140px;
+  margin-left: 37.5%;
+  border-radius: 3px;
+  /*background: none repeat scroll 0% 0% #333333;*/
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #CCC;
+  padding: 8px;
+  color: #6C83A9;
+  font-family: trebuchet MS,sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
+  padding-bottom: 10px;
+}
+
+#login_button {
+  font-family: trebuchet MS,sans-serif;
+  border-radius: 3px;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  background-color: #A5B8DA;
+  background-image: -moz-linear-gradient(center top, #a5b8da, #7089b3);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #758FBA #6C84AB #5C6F91;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  &:hover {
+    background-color: #6C83A9;
+    background-image: -moz-linear-gradient(center top, #6c84ab, #5c6f91);
+    border-color: #758FBA #6C84AB #5C6F91;
+  }
+}
+
+#joinus_button {
+  font-family: trebuchet MS,sans-serif;
+  border-radius: 3px;
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  background-color: #A5B8DA;
+  background-image: -moz-linear-gradient(center top, #a5b8da, #7089b3);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #758FBA #6C84AB #5C6F91;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 6px;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    background-color: #6C83A9;
+    background-image: -moz-linear-gradient(center top, #6c84ab, #5c6f91);
+    border-color: #758FBA #6C84AB #5C6F91;
+  }
+}
+
+#errorbox {
+  position: absolute;
+  top: 10%;
+  margin-left: 37.5%;
+  color: #AA2222;
+  padding: 10px;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (max-width: 718px) {
+  #login-box {
+    top: 50%;
+    width: 100%;
+    margin-top: -140px;
+    margin-left: 0%;
+  }
+  #errorbox {
+    position: absolute;
+    top: 15%;
+    margin-left: 0%;
+    color: #AA2222;
+  }
+}
+
+@media only screen and (max-width: 718px) and (orientation: landscape) {
+  #login-box {
+    top: 50%;
+    width: 70%;
+    margin-top: -140px;
+    margin-left: 15%;
+  }
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media (min-width: 719px) and (max-width: 1250px) {
+  #login-box {
+    top: 50%;
+    width: 35%;
+    margin-top: -140px;
+    margin-left: 34%;
+  }
+  #errorbox {
+    position: absolute;
+    top: 15%;
+    margin-left: 25%;
+    color: #AA2222;
+  }
+}
+
+@media (min-width: 719px) and (max-width: 1250px) and (orientation: portrait) {
+  #login-box {
+    top: 50%;
+    width: 40%;
+    margin-top: -140px;
+    margin-left: 30%;
+  }
+}
+
+.email_login {
+  margin-left: 30px !important;
+}
+
+.login-label {
+  width: 245px !important;
+}

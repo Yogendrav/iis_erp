@@ -9,8 +9,10 @@ Iis::Application.routes.draw do
       get "index"
       get "user_birthday"
       get "employee_search"
+      get "search_result"
     end
   end
+  resources :leaves
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

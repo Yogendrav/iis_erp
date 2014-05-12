@@ -92,6 +92,61 @@
               / end content-table-inner ............................................END
             %td#tbl-border-right
           %tr
+            %td#tbl-border-left
+            %td{valign: "top"}
+              / start content-table-inner
+              #content-table-inner
+                %table{border: "0", width: "100%"}
+                  %tbody
+                    %tr
+                      %td{valign: "top"}
+                        %table{border: "0", width: "100%"}
+                          %tbody
+                            %tr
+                              %td{valign: "top", width: "100%"}
+                                %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+                                  %tbody
+                                    %tr.alternate-row-search
+                                      %td
+                                        %i Name
+                                        %b.caret{:style => "color:#d3d3d3"}
+                                      %td
+                                        %i Experience
+                                        %b.caret{:style => "color:#d3d3d3"}
+                                      %td
+                                        %i Department
+                                        %b.caret{:style => "color:#d3d3d3"}
+                                      %td
+                                        %i Skills
+                                        %b.caret{:style => "color:#d3d3d3"}
+                                  - @user_search.each do |us|
+                                    %tbody
+                                      - if us.emp_name.present?
+                                        %tr
+                                          %td
+                                            = image_tag us.image, :class => "search_user_image"
+                                            = us.emp_name
+                                            .employee_search_mail
+                                              = us.email
+                                          %td
+                                            %span
+                                              %b Ignis Exp :
+                                              .employee_sarch_exp
+                                                = us.exp_in_iis
+                                            %span
+                                              %b Total Exp:
+                                              .employee_sarch_exp
+                                                = us.total_exp
+                                          %td
+                                            = us.department
+                                          %td
+                                            = us.primary_skills
+                                      - else
+                                        No match fornd
+                .clear
+              / end content-table-inner
+            %td#tbl-border-right
+          %tr
             %th.sized.bottomleft
             %td#tbl-border-bottom  
             %th.sized.bottomright

@@ -31,11 +31,18 @@
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               Leave & Attendence
               %b.caret
-            %ul.dropdown-menu
-              %li
-                %i.fa.fa-adjust
-                  %a{href: "#"}
-                  Leave
+            %ul#menu1.dropdown-menu
+              %li.dropdown-submenu
+                = link_to "Leave" 
+                %ul.dropdown-menu
+                  %li
+                    = link_to new_leafe_path do
+                      %i.fa.fa-bars
+                      Request For Leave
+                  %li
+                    %a{href: "#"} My Leave Status
+                  %li
+                    %a{href: "#"} Holiday List
               %li
                 %i.fa.fa-bars
                   %a{href: "#"}
