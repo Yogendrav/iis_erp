@@ -1,0 +1,53 @@
+.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: "/"} IGNIS IT SOLUTIONS
+    .collapse.navbar-collapse.navbar-responsive-collapse
+      - if user_signed_in?
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Employees & Skills
+              %b.caret
+            %ul.dropdown-menu.menu_level_1{role: "menu"}
+              %li
+                = link_to profiles_path do
+                  %i.fa.fa-info
+                  My Info
+              %li
+                = link_to user_birthday_profiles_path(@user) do
+                  %i.fa.fa-smile-o
+                  Birthday
+              %li
+                = link_to employee_search_profiles_path(@user) do
+                  %i.fa.fa-search
+                  Employee directory
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Leave & Attendence
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %i.fa.fa-adjust
+                  %a{href: "#"}
+                  Leave
+              %li
+                %i.fa.fa-bars
+                  %a{href: "#"}
+                  Attendence
+        %ul.nav.navbar-nav.pull-right
+          %li{:style => "float:right;"}
+            = link_to destroy_user_session_path, :method => :delete do
+              %i.fa.fa-sign-out
+              Log Out
+      - else
+        %ul.nav.navbar-nav.pull-right
+          %li
+            = link_to new_user_session_path do
+              %i.fa.fa-user
+              Login

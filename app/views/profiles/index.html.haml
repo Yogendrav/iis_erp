@@ -1,0 +1,222 @@
+#page-top-outer
+  #page-top
+    #logo
+      %a{href: ""}
+        %img{alt: "", height: "40", src: "logo.png", width: "156"}/
+    #top-search
+      %table{border: "0", cellpadding: "0", cellspacing: "0"}
+        %tbody
+          %tr
+            %td
+              .whitebig
+                Welcome
+                = current_user.emp_name
+  = current_user.emp_id
+#content-outer
+  #content
+    #page-heading
+    %table#content-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+      %tbody
+        %tr
+          %th.sized{rowspan: "3"}
+            %img{alt: "", height: "300", src: "side_shadowleft.jpg", width: "20"}/
+          %th.topleft
+          %td#tbl-border-top
+          %th.topright
+          %th.sized{rowspan: "3"}
+            %img{alt: "", height: "300", src: "side_shadowright.jpg", width: "20"}/
+        %tr
+          %td#tbl-border-left
+          %td{valign: "top"}
+            %table{border: "0", width: "100%"}
+              %tbody
+                %tr
+                  %td{valign: "top", width: "100%"}
+                    %table{border: "0", width: "100%"}
+                      %tbody
+                        %tr
+                          %td{valign: "top", width: "25%"}
+                            %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "98%"}
+                              %tbody
+                                %tr
+                                  %td.styletd{width: "100%"}
+                                    .headstyletd Official Info
+                                %tr
+                                  %td{valign: "top", width: "100%"}
+                                    .all_users
+                                      #user1.innertxt{style: "width: 249; height: 105", userid: "1"}
+                                        = image_tag current_user.image
+                                        %strong
+                                          = current_user.emp_name
+                                        %ul
+                                          %li
+                                            Emp ID
+                                            = current_user.emp_id
+                                          %li
+                                            Email:
+                                            = current_user.email
+                                          %li
+                                            Designation:
+                                            = current_user.designation
+                                          %li
+                                            Department:
+                                            = current_user.department
+                                          %li
+                                            DOJ:
+                                            = current_user.date_of_join
+                                %tr.alternate-row
+                                  %td
+                                    %p
+                                      %strong
+                                        Notice Period :
+                                        = current_user.notice_period
+                                    %p
+                                      %strong
+                                        Commitment Period :
+                                      %b
+                                        %i
+                                          = current_user.commitment_period
+                                    %br
+                                    %p
+                                      %strong
+                                        PAN No :
+                                        = current_user.pan_no
+                                    %p
+                                      %strong
+                                        PF No :
+                                        = current_user.pf_no
+                                    %p
+                                      %strong
+                                        ESI No :
+                                        = current_user.esi_no
+                                    %p
+                                      %strong
+                                        Bank Account No :
+                                        = current_user.bank_account
+                                    %br
+                                    %p
+                                      Exp at DOJ:
+                                      = current_user.experience_at_joining
+                                    %p
+                                      %strong
+                                        Exp in IIS :
+                                        = current_user.exp_in_iis
+                                    %p
+                                      Total Exp(
+                                      %strong> IIS EVE
+                                      ) :
+                                      %b
+                                        = current_user.total_exp
+                                    %br/
+                                    %p
+                                      %strong
+                                        Increment:
+                                      %font{color: "red"}
+                                        = current_user.increament
+                          %td{valign: "top", width: "75%"}
+                            / Personal Info
+                            %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+                              %tbody
+                                %tr.alternate-row
+                                  %td{height: "18", width: "16%"}
+                                    %b Father's Name
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.father_name
+                                  %td{height: "18", width: "16%"}
+                                    %b Mother's Name
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.mother_name
+                                  %td{height: "30", width: "16%"}
+                                    %b Date Of Birth
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.dob
+                                %tr
+                                  %td{height: "18", width: "16%"}
+                                    %b Current Address
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.current_address
+                                  %td{height: "18", width: "16%"}
+                                    %b Permanent Address
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.permanent_address
+                                  %td{height: "18", width: "16%"}
+                                    %b Gender
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.gender
+                                %tr.alternate-row
+                                  %td{height: "18", width: "16%"}
+                                    %b Contact Number
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.contact_no
+                                  %td{height: "18", width: "16%"}
+                                    %b Mobile No1
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.mobile_no1
+                                  %td{height: "18", width: "16%"}
+                                    %b Mobile No2
+                                  %td{height: "18", width: "17.3%"}
+                                    = current_user.mobile_no2
+                                %tr
+                                  %td{height: "30", width: "16%"}
+                                    %b Email address (Personal)
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.personal_email
+                                  %td{height: "30", width: "16%"}
+                                    %b Blood Group
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.blood_group
+                                  %td{height: "30", width: "16%"}
+                                  %td{height: "30", width: "17.3%"}
+                                %tr.alternate-row
+                                  %td{width: "16%"}
+                                    %b Highest Education
+                                    %font{color: "#FF0000"} *
+                                  %td{width: "17.3%"}
+                                    = current_user.highest_education
+                                  %td{width: "16%"}
+                                    %b Language Known
+                                    %font{color: "#FF0000"} *
+                                  %td{width: "17.3%"}
+                                    = current_user.language
+                                %tr
+                                  %td{width: "16%"}
+                                    %b Primary Skills
+                                  %td{width: "17.3%"}
+                                    = current_user.primary_skills
+                                  %td{width: "16%"}
+                                    %b Secondary Skills
+                                  %td{width: "17.3%"}
+                                    = current_user.secondary_skills
+                                  %td{width: "16%"}
+                                    %b
+                                  %td{width: "17.3%"}
+                                %tr.alternate-row
+                                  %td{height: "30", width: "16%"}
+                                    %b Marital Status
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.marrital_status
+                                  %td{height: "30", width: "16%"}
+                                    %b Spouse Name
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.spouse_name
+                                  %td{height: "30", width: "16%"}
+                                    %b Date Of Aniversary
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.date_of_aniversary
+                                %tr
+                                  %td{height: "30", width: "16%"}
+                                    %b Passport Number
+                                  %td{height: "30", width: "17.3%"}
+                                    = current_user.passport_no
+                                
+                            %b Note:If your information is incomplete or incorrect please consult concern department with no delay
+            .clear
+            / end content-table-inner
+          %td#tbl-border-right
+        %tr
+          %th.sized.bottomleft
+          %td#tbl-border-bottom  
+          %th.sized.bottomright
+    .clear  
+  .clear  
+.clear

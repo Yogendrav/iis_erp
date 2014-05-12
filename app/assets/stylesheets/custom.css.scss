@@ -1,0 +1,41 @@
+#wrap {
+  height: auto !important;
+  margin: 0 auto -60px;
+  min-height: 100%;
+}
+
+#push {
+  height: 60px;
+}
+
+#footer {
+  background-color: #333333;
+  bottom: 0;
+  color: #A8A7A8;
+  position: fixed;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.container {
+  /*max-width: 680px;*/
+  width: auto;
+  .credit {
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+/*Profile Page*/
+
+#content-outer {
+  margin: 10px;
+}

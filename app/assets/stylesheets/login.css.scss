@@ -1,0 +1,83 @@
+body {
+  .login {
+    background: url("bg.png");
+    position: relative;
+    margin: 80px auto;
+    width: 400px;
+    padding-right: 32px;
+    font-weight: 300;
+    color: #a8a7a8;
+    p {
+      margin: 0 0 10px;
+    }
+  }
+
+  input {
+    &[type=email], &[type=password] {
+      padding: 0 10px;
+      width: 300px;
+      height: 40px;
+      color: #bbb !important;
+      background: rgba(0, 0, 0, 0.16);
+      border: 0;
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+    }
+    &[type=email]:focus, &[type=password]:focus {
+      color: white;
+      background: rgba(0, 0, 0, 0.1);
+      outline: 0;
+    }
+  }
+
+  label {
+    float: left;
+    width: 100px;
+    line-height: 40px;
+    padding-right: 10px;
+    font-weight: 100;
+    text-align: right;
+    letter-spacing: 1px;
+  }
+
+  .forgot-password {
+    padding-left: 100px;
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+
+  .login-submit {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border-radius: 32px;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  }
+
+  .login-button {
+    background: url("arrow.png");
+    position: relative;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    padding: 0 0 48px;
+    /* Fix wrong positioning in Firefox 9 & older (bug 450418) */
+    text-indent: 120%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: none;
+    border: 0;
+    border-radius: 24px;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+    /* Must use another pseudo element for the gradient background because Webkit */
+    /* clips the background incorrectly inside elements with a border-radius.     */
+  }
+}

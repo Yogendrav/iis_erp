@@ -1,0 +1,69 @@
+%body
+  #content-outer
+    #content
+      #demoform
+        #page-heading
+          %h1 Birthday
+        :css
+          td { font-size: 11px;height: 30 }
+          .smalltd { font-size: 11px;height: 20 }
+          .smalltd td { font-size: 11px;height: 20 }
+        %table#content-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+          %tbody
+            %tr
+              %th.sized{rowspan: "3"}
+                = image_tag "side_shadowleft.jpg"
+              %th.topleft
+              %td#tbl-border-top
+              %th.topright
+              %th.sized{rowspan: "3"}
+                = image_tag "side_shadowright.jpg"
+            %tr
+              %td#tbl-border-left
+              %td{valign: "top"}
+                / start content-table-inner
+                #content-table-inner
+                  %table{border: "0", width: "100%"}
+                    %tbody
+                      %tr
+                        %td{valign: "top"}
+                          %table{border: "0", width: "100%"}
+                            %tbody
+                              %tr
+                                %td{valign: "top", width: "100%"}
+                                  %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+                                    %tbody
+                                      %tr.alternate-row
+                                        %td
+                                          %b
+                                            %i Date
+                                        %td
+                                          %b
+                                            %i Name
+                                        %td
+                                          %b
+                                            %i Department
+                                        %td
+                                          %b
+                                            %i Designation
+                                    - @users.each do |user|
+                                      %tbody
+                                        %tr
+                                          %td
+                                            = user.emp_name
+                                          %td
+                                            = user.dob.strftime("%d %b")
+                                          %td
+                                            = user.department
+                                          %td
+                                            = user.designation
+                  .clear
+                / end content-table-inner
+              %td#tbl-border-right
+            %tr
+              %th.sized.bottomleft
+              %td#tbl-border-bottom  
+              %th.sized.bottomright
+      .clear  
+    .clear  
+  .clear
