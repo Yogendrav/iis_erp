@@ -8,6 +8,6 @@ class ProfilesController < ApplicationController
   	@users = User.all
   end
   def employee_search
-  	@profiles = Profile.search(params[:search])
+  	@user_search = User.search(params[:search])
   end
 end

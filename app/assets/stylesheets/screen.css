@@ -13,17 +13,18 @@ body	{
 	}
 
 .styletd{
-   background: url('../images/forms/bg.gif') center top;
+   /*background: url('../images/forms/bg.gif') center top;*/
    /*width:100%;*/
+   background-color: #333333;
    color: #FFFFFF;
     height: 39px
 }
 
 .headstyletd {
 font-size: 13px;
-color: #333;
+color: #d3d3d3;
 font-weight: bold;
-text-align: center;
+text-align: left;
 /*margin: 0 0 0 10px;*/
 margin: 5px;
 }
@@ -413,7 +414,7 @@ a:hover.icon-6	{
 	padding: 10px 0 10px 10px;
 	}
 #product-table tr.alternate-row	{
-	background: #ececec;
+	background: #333;
 	}
 #product-table td.alternate-row {
     background: none repeat scroll 0 0 #ECECEC;
@@ -1867,3 +1868,19 @@ font-size:12px;height:30px;padding:5px;
 
 
 .dashnoti {background: #FFA700 !important; }
+
+
+/*Employee Search*/
+
+.alternate-row i {
+	color: #d3d3d3;
+}
+.search_user_image {
+	height: 50px;
+	width:50px;
+}
+.employee_search_mail {
+  color: #C3862D;
+  display: block;
+  margin: 5px;
+}
