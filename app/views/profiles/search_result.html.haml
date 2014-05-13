@@ -8,88 +8,74 @@
       %table#content-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
         %tbody
           %tr
-            %th.sized{rowspan: "3"}
-              = image_tag "side_shadowleft.jpg"
-            %th.topleft
-            %td#tbl-border-top  
-            %th.topright
-            %th.sized{rowspan: "3"}
-              = image_tag "side_shadowright.jpg"
-          %tr
             %td#tbl-border-left
             %td
               / start content-table-inner ...................................................................... START
               #content-table-inner
                 / start table-content
-                #table-content
-                  / start message-yellow
-                  / end message-yellow
-                  :css
-                    .all_users
-                    {
-                    	color: #666;
-                    	line-height: 2.4em;
-                    	margin: 0px;
-                    	width: 350px;
-                    	float:left;
-                    	overflow:auto;
-                    }
-                    .all_users .innertxt
-                    {
-                    	font-size: 0.8em;
-                    	color:#666666;
-                    	display:inherit;
-                    	padding-bottom:25px;
-                    }
-                    .all_users .innertxt img
-                    {
-                    	float:left;
-                    	border: solid 1px #cccccc;
-                    	margin:5px 5px 5px 0;
-                    }
-                    .all_users .innertxt strong
-                    {
-                    	color:#666666;
-                    	font-size:11px;
-                    	font-weight:bold;	
-                    }
-                    .all_users .innertxt li
-                    {
-                    	color:#666666;
-                    	font-size:11px;
-                    	font-weight:normal;
-                    	margin:-15px 0 -15px 0;	
-                    	text-align:left;
-                    	list-style-type:none;
-                    }	
-                    
-                    .shorttext li
-                    {
-                    	color:#666666;
-                    	font-size:11px;
-                    	/*margin:-15px 0 -15px 0;	*/
-                    	text-align:left;
-                    	list-style-type:none;
-                    }
-                  %table{border: "0", width: "100%"}
-                    = form_tag search_result_profiles_path, :method => 'get' do
-                      %tbody
-                        %tr
-                          %td.search_styletd{width: "100%"}
-                            .headstyletd Search by Name
-                        %tr
-                          %td{valign: "top", width: "100%"}
-                            %table.producttable1{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-                              %tbody
-                                %tr.alternate-row
-                                  %td
-                                    Employee Name :
-                                    = text_field_tag :search, params[:search]
-                                    = submit_tag "Search", :name => nil
-                  / end product-table...................................
-                / end content-table
+                :css
+                  .all_users
+                  {
+                  	color: #666;
+                  	line-height: 2.4em;
+                  	margin: 0px;
+                  	width: 350px;
+                  	float:left;
+                  	overflow:auto;
+                  }
+                  .all_users .innertxt
+                  {
+                  	font-size: 0.8em;
+                  	color:#666666;
+                  	display:inherit;
+                  	padding-bottom:25px;
+                  }
+                  .all_users .innertxt img
+                  {
+                  	float:left;
+                  	border: solid 1px #cccccc;
+                  	margin:5px 5px 5px 0;
+                  }
+                  .all_users .innertxt strong
+                  {
+                  	color:#666666;
+                  	font-size:11px;
+                  	font-weight:bold;	
+                  }
+                  .all_users .innertxt li
+                  {
+                  	color:#666666;
+                  	font-size:11px;
+                  	font-weight:normal;
+                  	margin:-15px 0 -15px 0;	
+                  	text-align:left;
+                  	list-style-type:none;
+                  }	
+                  
+                  .shorttext li
+                  {
+                  	color:#666666;
+                  	font-size:11px;
+                  	/*margin:-15px 0 -15px 0;	*/
+                  	text-align:left;
+                  	list-style-type:none;
+                  }
+                %table{border: "0", width: "100%"}
+                  = form_tag search_result_profiles_path, :method => 'get' do
+                    %tbody
+                      %tr
+                        %td.search_styletd{width: "100%"}
+                          .headstyletd Search by Name
+                      %tr
+                        %td{valign: "top", width: "100%"}
+                          %table.producttable1{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+                            %tbody
+                              %tr.alternate-row
+                                %td
+                                  Employee Name :
+                                  = text_field_tag :search, params[:search]
+                                  = submit_tag "Search", :name => nil
                 .clear
-              / end content-table-inner ............................................END
             %td#tbl-border-right
           %tr
             %td#tbl-border-left
@@ -105,44 +91,46 @@
                             %tr
                               %td{valign: "top", width: "100%"}
                                 %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-                                  %tbody
-                                    %tr.alternate-row-search
-                                      %td
-                                        %i Name
-                                        %b.caret{:style => "color:#d3d3d3"}
-                                      %td
-                                        %i Experience
-                                        %b.caret{:style => "color:#d3d3d3"}
-                                      %td
-                                        %i Department
-                                        %b.caret{:style => "color:#d3d3d3"}
-                                      %td
-                                        %i Skills
-                                        %b.caret{:style => "color:#d3d3d3"}
-                                  - @user_search.each do |us|
+                                  - if @user_search.present?
                                     %tbody
-                                      - if us.emp_name.present?
-                                        %tr
-                                          %td
-                                            = image_tag us.image, :class => "search_user_image"
-                                            = us.emp_name
-                                            .employee_search_mail
-                                              = us.email
-                                          %td
-                                            %span
-                                              %b Ignis Exp :
-                                              .employee_sarch_exp
-                                                = us.exp_in_iis
-                                            %span
-                                              %b Total Exp:
-                                              .employee_sarch_exp
-                                                = us.total_exp
-                                          %td
-                                            = us.department
-                                          %td
-                                            = us.primary_skills
-                                      - else
-                                        No match fornd
+                                      %tr.alternate-row-search
+                                        %td
+                                          %i Name
+                                          %b.caret{:style => "color:#d3d3d3"}
+                                        %td
+                                          %i Experience
+                                          %b.caret{:style => "color:#d3d3d3"}
+                                        %td
+                                          %i Department
+                                          %b.caret{:style => "color:#d3d3d3"}
+                                        %td
+                                          %i Skills
+                                          %b.caret{:style => "color:#d3d3d3"}
+                                    - @user_search.each do |us|
+                                      %tbody
+                                        - if us.emp_name.present?
+                                          %tr
+                                            %td
+                                              = image_tag us.image, :class => "search_user_image"
+                                              = us.emp_name
+                                              .employee_search_mail
+                                                = us.email
+                                            %td
+                                              %span
+                                                %b Ignis Exp :
+                                                .employee_sarch_exp
+                                                  = us.exp_in_iis
+                                              %span
+                                                %b Total Exp:
+                                                .employee_sarch_exp
+                                                  = us.total_exp
+                                            %td
+                                              = us.department
+                                            %td
+                                              = us.primary_skills
+                                  - else
+                                    .no_result
+                                      No match found
                 .clear
               / end content-table-inner
             %td#tbl-border-right

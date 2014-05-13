@@ -80,3 +80,14 @@ td {
 .birthday_view {
   padding: 20px;
 }
+#b_page-heading, #page-heading h1 { font-size: 24px; }
+
+/*search*/
+
+.no_result {
+  border: 1px solid #333;
+  color: #C3862D;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+}

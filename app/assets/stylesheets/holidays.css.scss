@@ -1,0 +1,18 @@
+// Place all the styles related to the holidays controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.holiday_list {
+	position: relative;
+	top: 5%;
+	.holiday_heading {
+		background-color: #333333;
+    color: #D3D3D3;
+    padding: 10px;
+    text-align: center;
+	}
+	.h_col th {
+		background-color: #d3d3d3 !important;
+		font-weight: bold !important;
+	}
+}
