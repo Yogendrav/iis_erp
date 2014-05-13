@@ -1,16 +1,20 @@
 .holiday_list
   .container
     %table.table.table-bordered
-      %thead
-        .holiday_heading
-          Holiday List
-        %tr.danger.h_col
-          %th Name
-          %th Date
-      - @holidays.each do |holiday|
-        %tbody
-          %tr.success
-            %td
-              = holiday.name
-            %td
-              = holiday.date.strftime("%A, %d %b %Y")
+      - if Date.current.year.present?
+        %thead
+          .holiday_heading
+            Holiday List
+          %tr.danger.h_col
+            %th Name
+            %th Date
+        - @holidays.each do |holiday|
+          %tbody
+            %tr.success
+              %td
+                = holiday.name
+              %td
+                = holiday.date.strftime("%A, %d %b %Y")
+      - else
+        .no_result
+          There is no Holiday list

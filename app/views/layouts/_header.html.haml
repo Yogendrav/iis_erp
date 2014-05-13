@@ -5,7 +5,7 @@
   %nav#nav
     - if user_signed_in?
       %ul
-        %li.current_page_item{style: "white-space: nowrap;"}
+        %li.header_hover_text{style: "white-space: nowrap;"}
           %a{href: root_path} Dashboards
         %li.opener{style: "-moz-user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;"}
           %span Leave & Attendence
@@ -30,11 +30,9 @@
               %a{href: user_birthday_profiles_path(@user), style: "display: block;"} Birthday
             %li{style: "white-space: nowrap;"}
               %a{href: employee_search_profiles_path(@user), style: "display: block;"} Employee directory
-        %li{style: "white-space: nowrap;"}
+        %li.header_hover_text{style: "white-space: nowrap;"}
           = link_to "Log Out", destroy_user_session_path, :method => :delete
     - else
-      %ul.nav.navbar-nav.pull-right
-        %li
-          = link_to new_user_session_path do
-            %i.fa.fa-user
-            Login
+      %ul
+        %li.header_hover_text
+          = link_to  "Login", new_user_session_path

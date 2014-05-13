@@ -1893,4 +1893,15 @@ font-size:12px;height:30px;padding:5px;
 
 /*header logo*/
 #header_logo { margin: 0 0 0 15px; }
-#header_logo img { height: 35px }
+#header_logo img { 
+	height: 33px;
+  margin-left: -45px;
+  /*position: fixed;*/
+}
+
+/*Updateting header hover text*/
+
+.header_hover_text a:hover{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.024) inset, 1px 1px 0 0 rgba(255, 255, 255, 0.024) !important;
+}
