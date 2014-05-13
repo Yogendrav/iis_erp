@@ -1890,3 +1890,7 @@ font-size:12px;height:30px;padding:5px;
 	color: #C3862D;
 	font-weight: bold;
 }
+
+/*header logo*/
+#header_logo { margin: 0 0 0 15px; }
+#header_logo img { height: 35px }

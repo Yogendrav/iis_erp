@@ -6,7 +6,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = render :partial => "layouts/header"
+    %header#header
+      = render :partial => "layouts/header"
     = yield
     #footer
       = render :partial => "layouts/footer"
