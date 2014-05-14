@@ -12,6 +12,8 @@
     top: 80px;
     width: 800px;
     margin: 0 auto;
+    margin: 0 auto;
+    width: 800px !important;
     .save_leave {
     	margin: 10px;
     }
@@ -166,6 +168,8 @@
 .login-label {
   width: 245px !important;
 }
+
+/*Leave*/
 
 .leave_fields {
   margin: 10px !important;
