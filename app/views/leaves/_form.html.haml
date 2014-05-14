@@ -1,19 +1,24 @@
 .container.leave_container
   .row.box_container
-    .col-sm-2
+    .col-sm-7
       = form_for @leave do |f|
-        .control-group
+        .control-group.leave_fields
           = f.label(:date_from, :class => "control-label")
           .controls
-            = f.datepicker :date_from, :placeholder => "DD/MM/YYYY"
-        .control-group
+            = f.datepicker :date_from, :placeholder => "dd-mm-yy", :class => "form-control"
+        .control-group.leave_fields
           = f.label(:date_to, :class => "control-label")
           .controls
-            = f.datepicker :date_to, :placeholder => "DD/MM/YYYY"
-        .control-group
+            = f.datepicker :date_to, :placeholder => "dd-mm-yy", :class => "form-control"
+        .control-group.leave_fields
           = f.label(:description, :class => "control-label")
           .controls
-            = f.text_area :description, :rows => 3, :placeholder => "Please mention leave reason"
-        .control-group
+            = f.text_area :description, :rows => 3, :cols => 29, :placeholder => "Please mention leave reason", :class => "form-control"
+        .control-group.leave_fields
           .controls
             = f.submit "Submit", :class => "btn btn-primary save_leave"
+
+:javascript
+$(document).ready(function(){
+  $( "#leave_date_from, #leave_date_to" ).datepicker({ dateFormat: 'dd-mm-yy' });
+})

@@ -36,4 +36,7 @@ class LeavesController < ApplicationController
 			render 'index'
 		end
 	end
+	def leave_status
+		
+	end
 end

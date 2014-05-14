@@ -12,7 +12,11 @@ Iis::Application.routes.draw do
       get "search_result"
     end
   end
-  resources :leaves
+  resources :leaves do
+    collection do
+      get "leave_status"
+    end
+  end
   resources :holidays, :only => :index
   # The priority is based upon order of creation:
   # first created -> highest priority.
