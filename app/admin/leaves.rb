@@ -1,9 +1,18 @@
 ActiveAdmin.register Leave do
 	actions :index, :approve, :decline
   index do
+  	column "Emp Name" do |u|
+  		User.find_by_id(u.user_id).emp_name
+  	end
   	column :date_from
   	column :date_to
   	column :description
+  	column "Department" do |d|
+  		User.find_by_id(d.user_id).department
+  	end
+  	column "Designation" do |d|
+  		User.find_by_id(d.user_id).designation
+  	end
   	column "leave_status" do |leave|
   		if leave.leave_status.nil?
   			ul :class => "approve_or_decline" do

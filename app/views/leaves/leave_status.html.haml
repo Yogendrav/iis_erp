@@ -1,0 +1,36 @@
+.holiday_list
+  .container
+    %table.table.table-bordered
+      %thead
+        .holiday_heading
+          My Leave Status
+        %tr.danger.h_col
+          %th Date From
+          %th Date To
+          %th Description
+          %th leave Status
+          %th
+          %th
+      - current_user.leave.each do |leave|
+        %tbody
+          %tr.success
+            %td
+              = leave.date_from.strftime("%A, %d %b %Y")
+            %td
+              = leave.date_to.strftime("%A, %d %b %Y")
+            %td
+              = leave.description
+            %td
+              - if leave.leave_status == true
+                Approved
+              - elsif leave.leave_status == false
+                Declined
+              - else
+                Pending
+            - unless leave.leave_status == true || leave.leave_status == false 
+              %td
+                %i.fa.fa-pencil-square-o
+                  = link_to 'Edit', edit_leafe_path(leave)
+            %td
+              %i.fa.fa-trash-o
+                = link_to 'Destroy', leave, method: :delete, data: { confirm: 'Are you sure?' }

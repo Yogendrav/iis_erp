@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
   EDUCATION = %w(MCA BE/BTech B.Sc Diploma)
   MSTATUS = %w(Y N)
 
+  has_many :leave, :dependent => :destroy
   def self.search(search)
     if search
       find(:all, :conditions => ['emp_name LIKE ?', "%#{search}%"])

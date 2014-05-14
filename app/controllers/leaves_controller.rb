@@ -13,9 +13,10 @@ class LeavesController < ApplicationController
 		@leave = Leave.find(params[:id])
 	end
 	def create
-		@leave = Leave.new(params[:leave])
+		debugger
+		@leave = current_user.leave.build(params[:leave])
 		if @leave.save
-			redirect_to root_path
+			redirect_to leave_status_leaves_path
 		else
 			render 'new'
 		end
@@ -23,7 +24,7 @@ class LeavesController < ApplicationController
 	def update
 		@leave = Leave.find(params[:id])
 		if @leave.update_attributes(params[:leave])
-			redirect_to root_path
+			redirect_to leave_status_leaves_path
 		else
 			render 'index'
 		end
