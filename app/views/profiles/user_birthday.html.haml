@@ -1,61 +1,22 @@
-%body
-  #content-outer
-    #content
-      #demoform
-        #b_page-heading
-          %h1 Birthday
-        :css
-          td { font-size: 11px;height: 30 }
-          .smalltd { font-size: 11px;height: 20 }
-          .smalltd td { font-size: 11px;height: 20 }
-        %table#content-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-          %tbody
-            %tr
-              %td#tbl-border-left
-              %td{valign: "top"}
-                / start content-table-inner
-                #content-table-inner
-                  %table{border: "0", width: "100%"}
-                    %tbody
-                      %tr
-                        %td{valign: "top"}
-                          %table{border: "0", width: "100%"}
-                            %tbody
-                              %tr
-                                %td{valign: "top", width: "100%"}
-                                  %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-                                    %tbody
-                                      %tr.alternate-row-bday
-                                        %td
-                                          %b
-                                            %i Name
-                                        %td
-                                          %b
-                                            %i B'day Date
-                                        %td
-                                          %b
-                                            %i Department
-                                        %td
-                                          %b
-                                            %i Designation
-                                    - @users.each do |user|
-                                      %tbody
-                                        %tr
-                                          %td
-                                            = user.emp_name
-                                          %td
-                                            = user.dob.strftime("%d %b")
-                                          %td
-                                            = user.department
-                                          %td
-                                            = user.designation
-                  .clear
-                / end content-table-inner
-              %td#tbl-border-right
-            %tr
-              %th.sized.bottomleft
-              %td#tbl-border-bottom  
-              %th.sized.bottomright
-      .clear  
-    .clear  
-  .clear
+.holiday_list
+  .container
+    %table.table.table-bordered
+      %thead
+        .holiday_heading
+          Birthday
+        %tr.danger.h_col
+          %th Name
+          %th B'day Date
+          %th Department
+          %th Designation
+      - @users.each do |user|
+        %tbody
+          %tr.success
+            %td
+              = user.emp_name
+            %td
+              = user.dob.strftime("%d %b")
+            %td
+              = user.department
+            %td
+              = user.designation

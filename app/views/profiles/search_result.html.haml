@@ -1,144 +1,63 @@
-%body
-  #content-outer
-    #content
-      / start page-heading
-      #page-heading
-        %h1 Employee Directory
-      / end page-heading
-      %table#content-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
+.holiday_list
+  .container
+    %table.search_form.table.table-bordered{border: "0", width: "100%"}
+      = form_tag search_result_profiles_path, :method => 'get' do
         %tbody
-          %tr
-            %td#tbl-border-left
-            %td
-              / start content-table-inner ...................................................................... START
-              #content-table-inner
-                / start table-content
-                :css
-                  .all_users
-                  {
-                  	color: #666;
-                  	line-height: 2.4em;
-                  	margin: 0px;
-                  	width: 350px;
-                  	float:left;
-                  	overflow:auto;
-                  }
-                  .all_users .innertxt
-                  {
-                  	font-size: 0.8em;
-                  	color:#666666;
-                  	display:inherit;
-                  	padding-bottom:25px;
-                  }
-                  .all_users .innertxt img
-                  {
-                  	float:left;
-                  	border: solid 1px #cccccc;
-                  	margin:5px 5px 5px 0;
-                  }
-                  .all_users .innertxt strong
-                  {
-                  	color:#666666;
-                  	font-size:11px;
-                  	font-weight:bold;	
-                  }
-                  .all_users .innertxt li
-                  {
-                  	color:#666666;
-                  	font-size:11px;
-                  	font-weight:normal;
-                  	margin:-15px 0 -15px 0;	
-                  	text-align:left;
-                  	list-style-type:none;
-                  }	
-                  
-                  .shorttext li
-                  {
-                  	color:#666666;
-                  	font-size:11px;
-                  	/*margin:-15px 0 -15px 0;	*/
-                  	text-align:left;
-                  	list-style-type:none;
-                  }
-                %table{border: "0", width: "100%"}
-                  = form_tag search_result_profiles_path, :method => 'get' do
-                    %tbody
-                      %tr
-                        %td.search_styletd{width: "100%"}
-                          .headstyletd Search by Name
-                      %tr
-                        %td{valign: "top", width: "100%"}
-                          %table.producttable1{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-                            %tbody
-                              %tr.alternate-row
-                                %td
-                                  Employee Name :
-                                  = text_field_tag :search, params[:search]
-                                  = submit_tag "Search", :name => nil
-                .clear
-            %td#tbl-border-right
-          %tr
-            %td#tbl-border-left
-            %td{valign: "top"}
-              / start content-table-inner
-              #content-table-inner
-                %table{border: "0", width: "100%"}
+          .search_form
+            %tr
+              %td.search_styletd{width: "100%"}
+                .holiday_heading{:style => "padding:0 !important;"} Search by Name
+            %tr
+              %td{valign: "top", width: "100%"}
+                %table.producttable1{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
                   %tbody
-                    %tr
-                      %td{valign: "top"}
-                        %table{border: "0", width: "100%"}
-                          %tbody
-                            %tr
-                              %td{valign: "top", width: "100%"}
-                                %table#product-table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
-                                  - if @user_search.present?
-                                    %tbody
-                                      %tr.alternate-row-search
-                                        %td
-                                          %i Name
-                                          %b.caret{:style => "color:#d3d3d3"}
-                                        %td
-                                          %i Experience
-                                          %b.caret{:style => "color:#d3d3d3"}
-                                        %td
-                                          %i Department
-                                          %b.caret{:style => "color:#d3d3d3"}
-                                        %td
-                                          %i Skills
-                                          %b.caret{:style => "color:#d3d3d3"}
-                                    - @user_search.each do |us|
-                                      %tbody
-                                        - if us.emp_name.present?
-                                          %tr
-                                            %td
-                                              = image_tag us.image, :class => "search_user_image"
-                                              = us.emp_name
-                                              .employee_search_mail
-                                                = us.email
-                                            %td
-                                              %span
-                                                %b Ignis Exp :
-                                                .employee_sarch_exp
-                                                  = us.exp_in_iis
-                                              %span
-                                                %b Total Exp:
-                                                .employee_sarch_exp
-                                                  = us.total_exp
-                                            %td
-                                              = us.department
-                                            %td
-                                              = us.primary_skills
-                                  - else
-                                    .no_result
-                                      No match found
-                .clear
-              / end content-table-inner
-            %td#tbl-border-right
-          %tr
-            %th.sized.bottomleft
-            %td#tbl-border-bottom  
-            %th.sized.bottomright
-      .clear  
-      .clear  
-    .clear  
-  .clear
+                    %tr.alternate-row
+                      %td
+                        Employee Name :
+                        = text_field_tag :search, params[:search]
+                        = submit_tag "Search", :name => nil
+    %br
+    - if @user_search.present?
+      %table.table.table-bordered
+        %thead
+          .holiday_heading
+            Search Result
+          %tr.danger.h_col
+            %td
+              %i Name
+              %b.caret{:style => "color:#333"}
+            %td
+              %i Experience
+              %b.caret{:style => "color:#333"}
+            %td
+              %i Department
+              %b.caret{:style => "color:#333"}
+            %td
+              %i Skills
+              %b.caret{:style => "color:#333"}
+        - @user_search.each do |us|
+          %tbody
+            %tr.success
+              %td
+                %a.thumbnail{:style => "width:10%;"}
+                  = image_tag us.image, :class => "search_user_image"
+                = us.emp_name
+                .employee_search_mail
+                  Email :
+                  = us.email
+              %td
+                %span
+                  .employee_sarch_exp
+                    Ignis Exp :
+                    = us.exp_in_iis
+                %span
+                  .employee_sarch_exp
+                    Total Exp :
+                    = us.total_exp
+              %td
+                = us.department
+              %td
+                = us.primary_skills
+    - else
+      .no_result
+        No result found
