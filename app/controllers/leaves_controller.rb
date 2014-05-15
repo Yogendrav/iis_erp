@@ -13,7 +13,6 @@ class LeavesController < ApplicationController
 		@leave = Leave.find(params[:id])
 	end
 	def create
-		debugger
 		@leave = current_user.leave.build(params[:leave])
 		if @leave.save
 			redirect_to leave_status_leaves_path
