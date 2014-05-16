@@ -52,20 +52,20 @@ ActiveAdmin.register User do
       f.input :emp_id
       f.input :designation, :as => :select, :collection => User::DESIGNATION, :include_blank =>false, :prompt => "Please select designation"
       f.input :department, :as => :select, :collection => User::DEPARTMENT, :include_blank => false, :prompt => "Please select department"
-      f.input :date_of_join, :as => :datepicker
-      f.input :notice_period
-      f.input :commitment_period
+      f.input :date_of_join, :as => :datepicker, :placeholder => "yy-mm-dd"
+      f.input :notice_period, :as => :select, :collection => User::NOTICE_PERIOD, :include_blank => false, :prompt => "Please select notice period"
+      f.input :commitment_period, :as => :select, :collection => User::COMMITMENT, :include_blank => false, :prompt => "Please select notice period"
       f.input :pan_no
       f.input :pf_no
       f.input :esi_no
       f.input :bank_account
-      f.input :experience_at_joining
-      f.input :exp_in_iis
-      f.input :total_exp
+      f.input :experience_at_joining, :as => :select, :collection => User::IGNIS_EXP, :include_blank => false, :prompt => "please select exp" 
+      f.input :exp_in_iis, :as => :select, :collection => User::IGNIS_EXP, :include_blank => false, :prompt => "please select exp" 
+      f.input :total_exp, :input_html => { :disabled => true } 
       f.input :increament
       f.input :father_name
       f.input :mother_name
-      f.input :dob, :as => :datepicker
+      f.input :dob, :as => :datepicker, :placeholder => "yy-mm-dd"
       f.input :current_address
       f.input :permanent_address
       f.input :gender, :as => :select, :collection => User::GENDER, :include_blank => false, :prompt => "Please select gender"
@@ -76,11 +76,11 @@ ActiveAdmin.register User do
       f.input :blood_group
       f.input :highest_education, :as => :select, :collection => User::EDUCATION, :include_blank => false, :prompt => "Please select highest education"
       f.input :language
-      f.input :primary_skills
-      f.input :secondary_skills
+      f.input :primary_skills, :as => :select, :collection => Skill.all.collect{|a| [a.add_skill, a.id]}, :include_blank => false, :multiple => true
+      f.input :secondary_skills, :as => :select, :collection => Skill.all.collect{|a| [a.add_skill, a.id]}, :include_blank => false, :multiple => true
       f.input :marrital_status, :as => :select, :collection => User::MSTATUS, :include_blank => false, :prompt => "Please select marrital status"
       f.input :spouse_name
-      f.input :date_of_aniversary, :as => :datepicker
+      f.input :date_of_aniversary, :as => :datepicker, :placeholder => "yy-mm-dd"
       f.input :passport_no
     end
     f.actions

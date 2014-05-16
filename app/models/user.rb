@@ -53,8 +53,12 @@ class User < ActiveRecord::Base
   GENDER = %w(Male Female)
   EDUCATION = %w(MCA BE/BTech B.Sc Diploma)
   MSTATUS = %w(Y N)
+  IGNIS_EXP = %w(0-Month 1-Month 2-Month 3-Month 4-Month 5-Month 6-Month 7-Month 8-Month 9-Month 10-Month 11-Month 12-Month)
+  NOTICE_PERIOD = %w(No 15-Days 30-Days 45-Days 60-Days)
+  COMMITMENT = %w(6-Month 1-Year 2-Year 3-year)
 
   has_many :leave, :dependent => :destroy
+  has_many :skills
   def self.search(search)
     if search
       find(:all, :conditions => ['emp_name LIKE ?', "%#{search}%"])
