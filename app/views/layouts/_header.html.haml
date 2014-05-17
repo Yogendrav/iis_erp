@@ -31,7 +31,7 @@
             %li{style: "white-space: nowrap;"}
               %a{href: employee_search_profiles_path(@user), style: "display: block;"} Employee directory
         %li.header_hover_text{style: "white-space: nowrap;"}
-          = link_to "Log Out", destroy_user_session_path, :method => :delete
+          = link_to "sign out", destroy_user_session_path
     - else
       %ul
         %li.header_hover_text
