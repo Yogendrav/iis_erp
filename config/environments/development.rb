@@ -31,6 +31,7 @@ Iis::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Expands the lines which load the assets
   config.assets.debug = true
@@ -38,8 +39,8 @@ Iis::Application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => "gmail.com",
-    :user_name => "xyz@gmail.com",
-    :password => "1234",
+    :user_name => "yogi.b3195@gmail.com",
+    :password => "123456",
     :authentication => "plain",
     :enable_starttls_auto => true
   }

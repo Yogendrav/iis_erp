@@ -1,4 +1,6 @@
 Iis::Application.routes.draw do
+  get "password_resets/new"
+
   root :to => 'dashboards#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -18,6 +20,7 @@ Iis::Application.routes.draw do
     end
   end
   resources :holidays, :only => :index
+  resources :password_resets
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
