@@ -1,0 +1,18 @@
+%p
+  %strong From:
+  = @message.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@message.sender.email), user_path(@message.sender))
+%p
+  %strong Received:
+  = @message.created_at.to_s(:long)
+%p
+  %strong To:
+  = @message.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@message.recipient.email), user_path(@message.recipient))
+%p
+  %strong Message
+  %br/
+  = h @message.body
+%p
+  - if @message.recipient == @user
+    = link_to "Reply", new_user_message_path(@user, :reply_to => @message)
+    |
+  = link_to "Inbox", user_messages_path(@user)

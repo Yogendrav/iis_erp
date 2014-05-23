@@ -27,7 +27,8 @@ gem 'activeadmin'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'jquery_datepicker'
-
+gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem "cancan"
 group :development, :test do
   gem 'rspec-rails'
 end

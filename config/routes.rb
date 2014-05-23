@@ -1,4 +1,6 @@
 Iis::Application.routes.draw do
+  
+
   get "password_resets/new"
 
   root :to => 'dashboards#index'
@@ -21,6 +23,13 @@ Iis::Application.routes.draw do
   end
   resources :holidays, :only => :index
   resources :password_resets
+  resources :users do
+    resources :messages do
+      collection do
+        post :delete_selected
+      end
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

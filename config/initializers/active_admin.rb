@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Iis"
+  config.site_title = "IGNIS"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -57,7 +57,13 @@ ActiveAdmin.setup do |config|
   # within the controller.
   config.authentication_method = :authenticate_admin_user!
 
-
+  # == User Authorization
+  #
+  # Active Admin will automatically call an authorization
+  # method in a before filter of all controller actions to
+  # ensure that there is a user with proper rights. You can use
+  # CanCanAdapter or make your own. Please refer to documentation.
+  config.authorization_adapter = "AdminAuthorization"
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -66,8 +72,7 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
   config.current_user_method = :current_admin_user
-
-
+  
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -109,7 +114,7 @@ ActiveAdmin.setup do |config|
   #   config.namespace :without_comments do |without_comments|
   #     without_comments.allow_comments = false
   #   end
-
+  # config.show_comments_in_menu = false
 
   # == Batch Actions
   #
@@ -204,7 +209,5 @@ ActiveAdmin.setup do |config|
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
-  # config.filters = true
-
-
+  config.filters = false
 end

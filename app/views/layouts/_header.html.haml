@@ -30,6 +30,8 @@
               %a{href: user_birthday_profiles_path(@user), style: "display: block;"} Birthday
             %li{style: "white-space: nowrap;"}
               %a{href: employee_search_profiles_path(@user), style: "display: block;"} Employee directory
+        %li
+          = link_to "Messages", user_messages_path(current_user)
         %li.header_hover_text{style: "white-space: nowrap;"}
           = link_to "sign out", destroy_user_session_path
     - else

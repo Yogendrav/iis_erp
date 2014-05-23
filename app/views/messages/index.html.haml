@@ -1,0 +1,14 @@
+.main_content_message.container
+  .box_wraper.left{:style => "width:25%;float:left;"}
+    %ul
+      %li
+        = link_to "Compose", new_user_message_path(@user)
+      %li
+        = link_to "Inbox", user_messages_path(@user)
+      %li
+        = link_to "Sent", user_messages_path(@user,:with=>"sent")
+  .box_wraper.right{:style => "width:75%;float:left;"}
+    - if params[:mailbox] == "sent"
+      = render :partial => "sent"
+    - else
+      = render :partial => "inbox"

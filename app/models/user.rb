@@ -59,6 +59,7 @@ class User < ActiveRecord::Base
 
   has_many :leave, :dependent => :destroy
   has_many :skills
+  has_private_messages
   def self.search(search)
     if search
       find(:all, :conditions => ['emp_name LIKE ?', "%#{search}%"])

@@ -7,4 +7,10 @@ class AdminUser < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  ROLES = %w(superadmin admin)
+  def role?(base_role)
+    debugger
+		return false unless role || self.new_record?
+		ROLES.index(base_role) == ROLES.index(role)
+	end
 end
