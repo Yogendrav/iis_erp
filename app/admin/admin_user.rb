@@ -1,8 +1,6 @@
 ActiveAdmin.register AdminUser do
-  menu :if => proc{ current_admin_user.role?(:superadmin) }, :priority => 2
-  # permit_params :email, :password, :password_confirmation, :role
-  # ROLES = %w(superadmin admin)
-  debugger
+  menu :priority => 2
+  ROLES = %w(superadmin admin)
   index do
     column :email
     column :current_sign_in_at
@@ -19,7 +17,7 @@ ActiveAdmin.register AdminUser do
       f.input :password
       f.input :password_confirmation
       if super_admin?
-        f.input :role, :as => :select, :collection => ROLES.map{|role| role.humanize}, :include_blank =>false
+        f.input :role, :as => :select, :collection => AdminUser::ROLES, :include_blank =>false
       else
         f.input :role, :as => :hidden, :value => ROLES.last
       end

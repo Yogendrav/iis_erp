@@ -1,4 +1,5 @@
 ActiveAdmin.register Leave do
+  menu :priority => 4
 	actions :index, :approve, :decline
   index do
   	column "Emp Name" do |u|

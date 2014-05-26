@@ -1,4 +1,5 @@
 ActiveAdmin.register Profile do
+  menu :if => proc{ current_admin_user.role?(:admin) }, :priority => 4
 	actions :index, :new, :create
   index do
   	column :emp_name

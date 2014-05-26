@@ -1,4 +1,5 @@
 ActiveAdmin.register Holiday do
+	menu :priority => 3
   index do
 		column :date
 		column :name

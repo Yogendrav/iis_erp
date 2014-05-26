@@ -1,4 +1,5 @@
 ActiveAdmin.register Skill do
+	menu :priority => 5
   index do
 		column :add_skill
 		default_actions

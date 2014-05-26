@@ -56,6 +56,7 @@ class User < ActiveRecord::Base
   IGNIS_EXP = %w(0-Month 1-Month 2-Month 3-Month 4-Month 5-Month 6-Month 7-Month 8-Month 9-Month 10-Month 11-Month 12-Month)
   NOTICE_PERIOD = %w(No 15-Days 30-Days 45-Days 60-Days)
   COMMITMENT = %w(6-Month 1-Year 2-Year 3-year)
+  ROLES = %w(admin user)
 
   has_many :leave, :dependent => :destroy
   has_many :skills
@@ -65,6 +66,12 @@ class User < ActiveRecord::Base
       find(:all, :conditions => ['emp_name LIKE ?', "%#{search}%"])
     else
       find(:all)
+    end
+  end
+
+  ROLES.each do |r|
+    define_method "is_#{r}" do
+      self.role == r
     end
   end
 

@@ -3,6 +3,10 @@
     .col-sm-7
       = form_for @leave do |f|
         .control-group.leave_fields
+          = f.label(:leave_type, :class => "control-label")
+          .controls
+            = f.select :leave_type, Leave::LEAVE_TYPE, :class => "form-control"
+        .control-group.leave_fields
           = f.label(:date_from, :class => "control-label")
           .controls
             = f.datepicker :date_from, :placeholder => "dd-mm-yy", :class => "form-control"
