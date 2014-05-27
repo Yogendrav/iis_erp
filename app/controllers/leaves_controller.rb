@@ -39,4 +39,7 @@ class LeavesController < ApplicationController
 	def leave_status
 		
 	end
+	def request_approval
+		
+	end
 end

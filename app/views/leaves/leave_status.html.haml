@@ -21,9 +21,9 @@
             %td
               = leave.description
             %td
-              - if leave.leave_status == true
+              - if leave.request_approval == true
                 Approved
-              - elsif leave.leave_status == false
+              - elsif leave.leave_status == false || leave.request_approval == false
                 Declined
               - else
                 Pending

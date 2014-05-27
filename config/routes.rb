@@ -19,6 +19,7 @@ Iis::Application.routes.draw do
   resources :leaves do
     collection do
       get "leave_status"
+      get "request_approval"
     end
   end
   resources :holidays, :only => :index
